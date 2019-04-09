@@ -3,4 +3,16 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <!-- New default colors -->
+    <color name="colorPrimary2">#2e0085</color>
+    <color name="colorPrimaryDark2">#1e0057</color>
+    <color name="colorAccent2">#d81b60</color>
+
+    <!-- Login activity  -->
+    <color name="backColorLog">#d5bfff</color>
+    <color name="inputColorLog">#80000000</color>
+    <color name="buttonColorLog">#CC8CA3</color>
+    <color name="textColorLog">#FFFFFF</color>
+
 </resources>

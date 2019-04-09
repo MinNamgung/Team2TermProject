@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">TermProject</string>
+
+    <!-- Log in Activity-->
+    <string name="eamailInputHint">email</string>
+    <string name="passwordInputHint">password</string>
+
+    <string name="fgtPswBtnTxt">Forgot Password?</string>
+    <string name="lginBtnTxt">Login</string>
+    <string name="CrtAccntBtnTxt">Create Account</string>
+
 </resources>
