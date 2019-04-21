@@ -2,17 +2,17 @@
 <resources>
     <color name="colorPrimary">#607D8B</color>
     <color name="colorPrimaryDark">#37474f</color>
-    <color name="colorAccent">#CFD6DC</color>
+    <color name="colorAccent">#CFDFED</color>
 
     <!-- New default colors -->
     <color name="colorPrimary2">#2e0085</color>
     <color name="colorPrimaryDark2">#1e0057</color>
-    <color name="colorAccent2">#d81b60</color>
+    <color name="colorAccent2">#EFC6DD</color>
 
     <!-- Login activity  -->
-    <color name="backColorLog">#d5bfff</color>
+    <color name="backColorLog">#9E9D9D</color>
     <color name="inputColorLog">#80000000</color>
-    <color name="buttonColorLog">#CC8CA3</color>
+    <color name="buttonColorLog">#EB8ECD</color>
     <color name="textColorLog">#FFFFFF</color>
 
 </resources>
