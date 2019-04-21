@@ -17,7 +17,6 @@ public class ListActivity extends AppCompatActivity {
 
         ListView mListView = (ListView) findViewById(R.id.listView);
 
-
         // List items
 
         Date netflixDate = new Date(119, 5, 9);

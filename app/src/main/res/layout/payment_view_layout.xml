@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:orientation="horizontal"
+    android:weightSum="100"
+    android:background="@color/colorPrimary">
+
+    <TextView
+        android:id="@+id/image1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_weight="28"
+        android:gravity="center"
+        android:text="IMG1"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_weight="22"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center|left"
+        android:text="TextView1"
+        android:textColor="@color/textColorLog"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/image2"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_weight="28"
+        android:gravity="center"
+        android:text="IMG2"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_weight="22"
+        android:fontFamily="@font/roboto_medium"
+        android:gravity="center|left"
+        android:text="TextView2"
+        android:textColor="@color/textColorLog"
+        android:textSize="18sp" />
+
+
+
+
+</LinearLayout>

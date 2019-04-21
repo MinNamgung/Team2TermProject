@@ -9,4 +9,7 @@
     <string name="lginBtnTxt">Login</string>
     <string name="CrtAccntBtnTxt">NO ACCOUNT YET? SIGN UP NOW</string>
 
+    <string name="payLeftLbl">Left: $</string>
+    <string name="payTotalLbl">Total: $</string>
+
 </resources>
