@@ -1,5 +1,6 @@
 package com.team.termproject;
 
+import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
@@ -17,22 +18,26 @@ public class ListActivity extends AppCompatActivity {
 
         ListView mListView = (ListView) findViewById(R.id.listView);
 
+
         // List items
 
-        Date netflixDate = new Date(119, 5, 9);
+        Date netflixDate = new Date(119, 4, 9);
         Subscription netflix = new Subscription("Netflix", netflixDate, "$9.99");
 
-        Date spotifyDate = new Date(119, 5, 13);
+        Date spotifyDate = new Date(119, 4, 13);
         Subscription spotify = new Subscription("Spotify", netflixDate, "$4.99");
 
-        Date cheggDate = new Date(119, 5, 12);
+        Date cheggDate = new Date(119, 4, 12);
         Subscription chegg = new Subscription("Chegg", cheggDate, "$14.99");
 
-        Date huluDate = new Date(119, 5, 17);
+        Date huluDate = new Date(119, 4, 17);
         Subscription hulu = new Subscription("Hulu", huluDate, "$12.99");
 
-        Date humbleBundleDate = new Date(119, 5, 11);
+        Date humbleBundleDate = new Date(119, 4, 11);
         Subscription humbleBundle = new Subscription("Humble Bundle", humbleBundleDate, "$12.00");
+
+        Date endDate = new Date(0, 0, 0);
+        Subscription end = new Subscription("", humbleBundleDate, "");
 
         //Add the subscription objects to the list
         ArrayList<Subscription> subList = new ArrayList<>();
