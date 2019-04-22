@@ -11,81 +11,109 @@
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
-        android:layout_height="fill_parent"
-        android:dividerHeight="5dp" />
+        android:layout_height="match_parent"
+        android:layout_marginTop="58dp"
+        android:layout_marginBottom="60dp"
+        android:dividerHeight="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-
-    <LinearLayout
-        android:id="@+id/bottomBar"
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
-        android:orientation="horizontal"
-        android:weightSum="100"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolBarTop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent">
 
-        <ImageView
-            android:id="@+id/btmBarImg1"
-            android:layout_width="0px"
-            android:layout_height="50dp"
-            android:layout_weight="15"
-            android:layout_gravity="center"
-            android:src="@drawable/money_stack_ico"/>
+        <LinearLayout
+            android:id="@+id/bottomBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:orientation="horizontal"
+            android:weightSum="100"
+            app:layout_constraintBottom_toBottomOf="parent">
 
-        <TextView
-            android:id="@+id/btmBarLeftLbl"
-            android:layout_width="0px"
-            android:layout_height="60dp"
-            android:layout_weight="14"
-            android:fontFamily="@font/roboto_medium"
-            android:gravity="center|left"
-            android:text=" Left: $"
-            android:textColor="@color/textColorLog"
-            android:textSize="18sp" />
+            <ImageView
+                android:id="@+id/btmBarImg1"
+                android:layout_width="0px"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_weight="15"
+                android:src="@drawable/money_stack_ico" />
 
-        <TextView
-            android:id="@+id/btmBarAmountLeft"
-            android:layout_width="0px"
-            android:layout_height="60dp"
-            android:layout_weight="20"
-            android:fontFamily="@font/roboto_medium"
-            android:gravity="center|left"
-            android:text="2"
-            android:textColor="@color/textColorLog"
-            android:textSize="18sp" />
+            <TextView
+                android:id="@+id/btmBarLeftLbl"
+                android:layout_width="0px"
+                android:layout_height="60dp"
+                android:layout_weight="14"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center|left"
+                android:text=" Left: $"
+                android:textColor="@color/textColorLog"
+                android:textSize="18sp" />
 
-        <ImageView
-            android:id="@+id/btmBarImg2"
-            android:layout_width="0px"
-            android:layout_height="50dp"
-            android:layout_weight="15"
-            android:layout_gravity="center"
-            android:src="@drawable/money_stack_ico"/>
+            <TextView
+                android:id="@+id/btmBarAmountLeft"
+                android:layout_width="0px"
+                android:layout_height="60dp"
+                android:layout_weight="20"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center|left"
+                android:text="2"
+                android:textColor="@color/textColorLog"
+                android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/btmBarTxtView2"
-            android:layout_width="0px"
-            android:layout_height="60dp"
-            android:layout_weight="16"
-            android:fontFamily="@font/roboto_medium"
-            android:gravity="center|left"
-            android:text="Total: $"
-            android:textColor="@color/textColorLog"
-            android:textSize="18sp" />
+            <ImageView
+                android:id="@+id/btmBarImg2"
+                android:layout_width="0px"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_weight="15"
+                android:src="@drawable/money_stack_ico" />
 
-        <TextView
-            android:id="@+id/btmBarAmountTotal"
-            android:layout_width="0px"
-            android:layout_height="60dp"
-            android:layout_weight="20"
-            android:fontFamily="@font/roboto_medium"
-            android:gravity="center|left"
-            android:text="2"
-            android:textColor="@color/textColorLog"
-            android:textSize="18sp" />
+            <TextView
+                android:id="@+id/btmBarTxtView2"
+                android:layout_width="0px"
+                android:layout_height="60dp"
+                android:layout_weight="16"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center|left"
+                android:text="Total: $"
+                android:textColor="@color/textColorLog"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/btmBarAmountTotal"
+                android:layout_width="0px"
+                android:layout_height="60dp"
+                android:layout_weight="20"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center|left"
+                android:text="2"
+                android:textColor="@color/textColorLog"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </android.support.design.widget.AppBarLayout>
 
 
-    </LinearLayout>
+
 
 
 

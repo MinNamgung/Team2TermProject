@@ -36,9 +36,6 @@ public class ListActivity extends AppCompatActivity {
         Date humbleBundleDate = new Date(119, 4, 11);
         Subscription humbleBundle = new Subscription("Humble Bundle", humbleBundleDate, "$12.00");
 
-        Date endDate = new Date(0, 0, 0);
-        Subscription end = new Subscription("", humbleBundleDate, "");
-
         //Add the subscription objects to the list
         ArrayList<Subscription> subList = new ArrayList<>();
 
