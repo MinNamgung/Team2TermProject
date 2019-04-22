@@ -29,7 +29,7 @@
             android:id="@+id/toolBarTop"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/gray_border">
+            android:background="@drawable/gray_border_top">
 
         </android.support.v7.widget.Toolbar>
     </android.support.design.widget.AppBarLayout>
@@ -39,14 +39,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/gray_border_bottom"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <LinearLayout
             android:id="@+id/bottomBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/gray_border_bottom"
             android:orientation="horizontal"
             android:weightSum="100"
             app:layout_constraintBottom_toBottomOf="parent">
