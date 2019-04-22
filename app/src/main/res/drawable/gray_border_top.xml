@@ -12,7 +12,7 @@
         <shape
             android:shape="rectangle">
             <stroke android:width="0.5dp"
-                android:color="@color/borderColor"/>
+                android:color="@color/cardview_dark_background"/>
             <solid android:color="@color/colorPrimary"/>
         </shape>
 

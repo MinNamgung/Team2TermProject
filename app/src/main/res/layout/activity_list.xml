@@ -22,14 +22,13 @@
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/gray_border_top">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolBarTop"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/gray_border_top">
+            android:layout_height="wrap_content">
 
         </android.support.v7.widget.Toolbar>
     </android.support.design.widget.AppBarLayout>
