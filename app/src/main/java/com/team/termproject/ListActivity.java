@@ -65,6 +65,16 @@ public class ListActivity extends AppCompatActivity {
     }
 
 
+    // public ArrayList<Subscription> getListOfPayments(){
+    // etc...
+
+    /*
+     * This will get all java objects in internal storage, and store them in an array list, then return the array list
+     *
+     */
+
+
+
     public ArrayList<Subscription> returnList(){
         // List items
 
