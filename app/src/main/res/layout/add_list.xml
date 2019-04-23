@@ -6,12 +6,52 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+    <!-- Action bar top start -->
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="100"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="15"
+                    android:src="@drawable/ic_arrow_back_black_24dp" />
+                <!-- text = Title of activity -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="70"
+                    android:fontFamily="@font/roboto_medium"
+                    android:gravity="center"
+                    android:text="Add Monthly Payment"
+                    android:textColor="@color/textColorLog"
+                    android:textSize="24sp" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="15"
+                    android:src="@drawable/ic_more_vert_black_24dp" />
+            </LinearLayout>
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
+    <!-- Action bar top end -->
+
     <TextView
         android:id="@+id/addName"
         android:layout_width="69dp"
         android:layout_height="43dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="108dp"
         android:layout_marginEnd="15dp"
         android:text="Name"
         android:textSize="25sp"
@@ -24,7 +64,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="11dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="108dp"
         android:layout_marginEnd="78dp"
         android:layout_marginBottom="35dp"
         android:ems="10"
@@ -104,19 +144,25 @@
         android:inputType="text"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.368"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/addEmail"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="100dp"
         android:layout_height="58dp"
-        android:layout_marginBottom="105dp"
+        android:layout_marginStart="155dp"
+        android:layout_marginEnd="155dp"
+        android:layout_marginBottom="68dp"
         android:background="@color/design_default_color_primary_dark"
         android:text="Save"
         android:textColor="@color/backColorLog"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="142dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
