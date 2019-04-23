@@ -15,4 +15,7 @@
     <color name="buttonColorLog">#EB8ECD</color>
     <color name="textColorLog">#FFFFFF</color>
 
+    <!-- List activity -->
+    <color name="borderColor">#727272</color>
+
 </resources>
