@@ -1,21 +1,30 @@
 package com.team.termproject;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ListView;
 
 import java.sql.Date;
 import java.util.ArrayList;
 
 public class ListActivity extends AppCompatActivity {
+    private static final String TAG = "ListActivity";
+
+    private Context mContext = ListActivity.this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
+        setupToolbar();
 
         ListView mListView = (ListView) findViewById(R.id.listView);
 
@@ -28,6 +37,24 @@ public class ListActivity extends AppCompatActivity {
     private void setupToolbar(){
         Toolbar toolbar = (Toolbar) findViewById(R.id.listViewToolbar);
         setSupportActionBar(toolbar);
+
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                switch (menuItem.getItemId()){
+                    case R.id.menuAdd:
+                        openAddActivity();
+                }
+
+                return false;
+            }
+        });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.action_bar_menu, menu);
+        return true;
     }
 
 
@@ -94,5 +121,11 @@ public class ListActivity extends AppCompatActivity {
         subList.add(humbleBundle);
 
         return subList;
+    }
+
+
+    public void openAddActivity(){
+        Intent intent = new Intent(ListActivity.this, AddActivity.class);
+        startActivity(intent);
     }
 }

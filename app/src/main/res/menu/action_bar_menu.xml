@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/menu">
-
+        android:title="Add Monthly Payment"
+        android:id="@+id/menuAdd">
+    </item>
+    <item
+        android:title="Log Out"
+        android:id="@+id/menuLog">
+    </item>
+    <item
+        android:title="Settings"
+        android:id="@+id/menuSettings">
     </item>
 </menu>
