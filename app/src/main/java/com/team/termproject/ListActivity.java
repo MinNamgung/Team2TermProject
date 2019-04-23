@@ -19,22 +19,28 @@ public class ListActivity extends AppCompatActivity {
         ListView mListView = (ListView) findViewById(R.id.listView);
 
 
+        SubscriptionListAdapter adapter = new SubscriptionListAdapter(this, R.layout.adapter_view_layout, returnList());
+        mListView.setAdapter(adapter);
+    }
+
+
+    public ArrayList<Subscription> returnList(){
         // List items
 
         Date netflixDate = new Date(119, 4, 9);
-        Subscription netflix = new Subscription("Netflix", netflixDate, "$9.99");
+        Subscription netflix = new Subscription("Netflix", netflixDate, "$9.99", "drawable://" + R.drawable.netflix_icon);
 
         Date spotifyDate = new Date(119, 4, 13);
-        Subscription spotify = new Subscription("Spotify", netflixDate, "$4.99");
+        Subscription spotify = new Subscription("Spotify", netflixDate, "$4.99", "drawable://" + R.drawable.spotify_icon);
 
         Date cheggDate = new Date(119, 4, 12);
-        Subscription chegg = new Subscription("Chegg", cheggDate, "$14.99");
+        Subscription chegg = new Subscription("Chegg", cheggDate, "$14.99", "drawable://" + R.drawable.chegg_icon);
 
         Date huluDate = new Date(119, 4, 17);
-        Subscription hulu = new Subscription("Hulu", huluDate, "$12.99");
+        Subscription hulu = new Subscription("Hulu", huluDate, "$12.99", "drawable://" + R.drawable.hulu_icon);
 
         Date humbleBundleDate = new Date(119, 4, 11);
-        Subscription humbleBundle = new Subscription("Humble Bundle", humbleBundleDate, "$12.00");
+        Subscription humbleBundle = new Subscription("Humble Bundle", humbleBundleDate, "$12.00", "drawable://" + R.drawable.humble_bundle_icon);
 
         //Add the subscription objects to the list
         ArrayList<Subscription> subList = new ArrayList<>();
@@ -80,7 +86,6 @@ public class ListActivity extends AppCompatActivity {
         subList.add(hulu);
         subList.add(humbleBundle);
 
-        SubscriptionListAdapter adapter = new SubscriptionListAdapter(this, R.layout.adapter_view_layout, subList);
-        mListView.setAdapter(adapter);
+        return subList;
     }
 }
