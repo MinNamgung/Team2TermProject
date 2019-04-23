@@ -44,6 +44,13 @@ public class ListActivity extends AppCompatActivity {
                 switch (menuItem.getItemId()){
                     case R.id.menuAdd:
                         openAddActivity();
+                        break;
+                    case R.id.menuLog:
+                        returnToLogInActivity();
+                        break;
+                    case R.id.menuSettings:
+                        break;
+
                 }
 
                 return false;
@@ -128,4 +135,10 @@ public class ListActivity extends AppCompatActivity {
         Intent intent = new Intent(ListActivity.this, AddActivity.class);
         startActivity(intent);
     }
+
+    public void returnToLogInActivity(){
+        Intent intent = new Intent(ListActivity.this, MainActivity.class);
+        startActivity(intent);
+    }
+
 }
