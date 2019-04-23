@@ -3,6 +3,7 @@ package com.team.termproject;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.widget.ListView;
 
 import java.sql.Date;
@@ -21,6 +22,12 @@ public class ListActivity extends AppCompatActivity {
 
         SubscriptionListAdapter adapter = new SubscriptionListAdapter(this, R.layout.adapter_view_layout, returnList());
         mListView.setAdapter(adapter);
+    }
+
+    //set up toolbar menu button
+    private void setupToolbar(){
+        Toolbar toolbar = (Toolbar) findViewById(R.id.listViewToolbar);
+        setSupportActionBar(toolbar);
     }
 
 
