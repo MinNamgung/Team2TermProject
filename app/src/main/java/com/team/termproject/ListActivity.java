@@ -65,16 +65,6 @@ public class ListActivity extends AppCompatActivity {
     }
 
 
-    // public ArrayList<Subscription> getListOfPayments(){
-    // etc...
-
-    /*
-     * This will get all java objects in internal storage, and store them in an array list, then return the array list
-     *
-     */
-
-
-
     public ArrayList<Subscription> returnList(){
         // List items
 
@@ -91,7 +81,7 @@ public class ListActivity extends AppCompatActivity {
         Subscription hulu = new Subscription("Hulu", huluDate, "$12.99", "drawable://" + R.drawable.hulu_icon);
 
         Date humbleBundleDate = new Date(119, 4, 11);
-        Subscription humbleBundle = new Subscription("Humble Bundle", humbleBundleDate, "$12.00", "drawable://" + R.drawable.humble_bundle_icon);
+        Subscription humbleBundle = new Subscription("Humble Bundle", humbleBundleDate, "$12.00", "drawable://" + R.drawable.image_failed);
 
         //Add the subscription objects to the list
         ArrayList<Subscription> subList = new ArrayList<>();
@@ -101,41 +91,7 @@ public class ListActivity extends AppCompatActivity {
         subList.add(chegg);
         subList.add(hulu);
         subList.add(humbleBundle);
-        subList.add(netflix);
-        subList.add(spotify);
-        subList.add(chegg);
-        subList.add(hulu);
-        subList.add(humbleBundle);
-        subList.add(netflix);
-        subList.add(spotify);
-        subList.add(chegg);
-        subList.add(hulu);
-        subList.add(humbleBundle);
-        subList.add(netflix);
-        subList.add(spotify);
-        subList.add(chegg);
-        subList.add(hulu);
-        subList.add(humbleBundle);
-        subList.add(netflix);
-        subList.add(spotify);
-        subList.add(chegg);
-        subList.add(hulu);
-        subList.add(humbleBundle);
-        subList.add(netflix);
-        subList.add(spotify);
-        subList.add(chegg);
-        subList.add(hulu);
-        subList.add(humbleBundle);
-        subList.add(netflix);
-        subList.add(spotify);
-        subList.add(chegg);
-        subList.add(hulu);
-        subList.add(humbleBundle);
-        subList.add(netflix);
-        subList.add(spotify);
-        subList.add(chegg);
-        subList.add(hulu);
-        subList.add(humbleBundle);
+
 
         return subList;
     }
