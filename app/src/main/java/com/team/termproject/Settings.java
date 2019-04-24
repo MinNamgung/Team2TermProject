@@ -43,12 +43,10 @@ public class Settings extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if(position == 0) {
                     Intent intent = new Intent(Settings.this, SetNewVersion.class);
-                    //intent.putExtra("version", list.getItemAtPosition(position).toString());
                     startActivity(intent);
                 }
                 else if(position == 1) {
                     Intent intent2 = new Intent(Settings.this, Notification.class);
-                    //intent.putExtra("version", list.getItemAtPosition(position).toString());
                     startActivity(intent2);
                 }
             }
