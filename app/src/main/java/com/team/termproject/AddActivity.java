@@ -55,6 +55,15 @@ public class AddActivity extends AppCompatActivity {
 
                 if(nameEt.length() != 0 && dayOfPayEt.length() != 0 && amountEt.length() != 0 && emailEt.length() != 0 && memoEt.length() != 0){
                     addData(name,payday,amount,email,memo,"drawable://" + R.drawable.money_stack_ico);
+
+                    //add test items
+
+//                    addData("Netflix", "7", "$9.99", "testemail@testemail.com", "Test memo for netflix", "drawable://" + R.drawable.netflix_icon);
+//                    addData("Spotify", "29", "$4.99", "testemail@testemail.com", "Test memo for spotify", "drawable://" + R.drawable.spotify_icon);
+//                    addData("Chegg", "27", "$14.99", "testemail@testemail.com", "Test memo for chegg", "drawable://" + R.drawable.chegg_icon);
+//                    addData("Hulu", "3", "$12.99", "testemail@testemail.com", "Test memo for hulu", "drawable://" + R.drawable.hulu_icon);
+//                    addData("Humble Bundle", "5", "$12.00", "testemail@testemail.com", "Test memo for humble bundle", "drawable://" + R.drawable.money_stack_ico);
+
                 }else{
                     toastMessage("You must fill out all input fields!");
                 }

@@ -41,10 +41,10 @@ public class SetHelp extends AppCompatActivity {
                     startActivity(intent2);
                 }
 
-                else if(position == 2) {
-                    Intent intent3 = new Intent(SetHelp.this, EditDataActivity.class);
-                    startActivity(intent3);
-                }
+//                else if(position == 2) {
+//                    Intent intent3 = new Intent(SetHelp.this, EditDataActivity.class);
+//                    startActivity(intent3);
+//                }
             }
         });
 
