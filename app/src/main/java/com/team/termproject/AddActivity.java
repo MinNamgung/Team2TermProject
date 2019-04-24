@@ -70,8 +70,6 @@ public class AddActivity extends AppCompatActivity {
     public void addData(String name, String day, String amount, String email, String memo, String img_url){
         boolean insertData = mDatabaseHelper.addData(name,day,amount,email,memo,img_url);
 
-        System.out.println(name + " " + day + " " + amount + " " + email + " " + memo + " " + img_url);
-
         if(insertData){
             toastMessage("Subscription successfully created!");
         }else{
