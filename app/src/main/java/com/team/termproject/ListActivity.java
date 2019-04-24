@@ -2,9 +2,11 @@ package com.team.termproject;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
@@ -60,6 +62,7 @@ public class ListActivity extends AppCompatActivity {
                         returnToLogInActivity();
                         break;
                     case R.id.menuSettings:
+                        openSetting();
                         break;
 
                 }
@@ -111,6 +114,11 @@ public class ListActivity extends AppCompatActivity {
 
     public void returnToLogInActivity(){
         Intent intent = new Intent(ListActivity.this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void openSetting(){
+        Intent intent = new Intent(ListActivity.this, Settings.class);
         startActivity(intent);
     }
 
