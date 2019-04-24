@@ -40,6 +40,11 @@ public class SetHelp extends AppCompatActivity {
                     Intent intent2 = new Intent(SetHelp.this, AddActivity.class);
                     startActivity(intent2);
                 }
+
+                else if(position == 2) {
+                    Intent intent3 = new Intent(SetHelp.this, EditDataActivity.class);
+                    startActivity(intent3);
+                }
             }
         });
 
