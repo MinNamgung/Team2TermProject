@@ -19,7 +19,7 @@ public class SetHelp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set_help);
 
-        list2 = (ListView) findViewById(R.id.settinglist);
+        list2 = (ListView) findViewById(R.id.helplist);
         ArrayList<String> settinglist2 = new ArrayList<>();
         settinglist2.add("Why is the notification not working? ");
         settinglist2.add("How to add my payment information?");

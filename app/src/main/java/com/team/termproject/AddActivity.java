@@ -40,7 +40,7 @@ public class AddActivity extends AppCompatActivity {
         dayOfPayEt = (EditText) findViewById(R.id.addDayOfPay);
         amountEt = (EditText) findViewById(R.id.addAmount);
         emailEt = (EditText) findViewById(R.id.addEmail);
-        memoEt = (EditText) findViewById(R.id.addEmail);
+        memoEt = (EditText) findViewById(R.id.addMemo);
         mDatabaseHelper = new DatabaseHelper(this);
 
 
