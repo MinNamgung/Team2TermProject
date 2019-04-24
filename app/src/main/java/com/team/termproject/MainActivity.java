@@ -8,20 +8,34 @@ import android.widget.Button;
 
 
 public class MainActivity extends AppCompatActivity {
-    private Button button;
+    private Button buttonLog;
+    private Button buttonReg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        button = (Button) findViewById(R.id.loginBtn);
-        button.setOnClickListener(new View.OnClickListener(){
+        buttonLog = (Button) findViewById(R.id.loginBtn);
+        buttonLog.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 openListActivity();
             }
         });
+
+        buttonReg = (Button) findViewById(R.id.pswdBtn);
+        buttonReg.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                openRegister();
+            }
+        });
+    }
+
+    private void openRegister() {
+        Intent intent = new Intent(this, RegisterView.class);
+        startActivity(intent);
     }
 
     public void openListActivity(){
