@@ -98,7 +98,7 @@ public class SubscriptionListAdapter extends ArrayAdapter<Subscription> {
         result.startAnimation(animation);
         lastPostion = position;
 
-        int defaultImage = mContext.getResources().getIdentifier("@drawable/image_failed", null, mContext.getPackageName());
+        int defaultImage = mContext.getResources().getIdentifier("@drawable/money_stack_ico", null, mContext.getPackageName());
 
         ImageLoader imageLoader = ImageLoader.getInstance();
         DisplayImageOptions options = new DisplayImageOptions.Builder().cacheInMemory(true)
