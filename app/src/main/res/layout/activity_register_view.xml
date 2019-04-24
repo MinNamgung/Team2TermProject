@@ -10,8 +10,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="411dp"
-        android:layout_height="735dp"
+        android:layout_width="477dp"
+        android:layout_height="838dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,59 +35,69 @@
         android:id="@+id/firstname"
         android:layout_width="321dp"
         android:layout_height="49dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="28dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginEnd="24dp"
         android:ems="10"
         android:hint="First name"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registertxt" />
 
     <EditText
         android:id="@+id/editText3"
         android:layout_width="321dp"
         android:layout_height="49dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginEnd="24dp"
         android:ems="10"
         android:hint="Last name"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/firstname" />
 
     <EditText
         android:id="@+id/registerpwd"
         android:layout_width="321dp"
         android:layout_height="49dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registeremail" />
 
     <EditText
         android:id="@+id/registeremail"
         android:layout_width="321dp"
         android:layout_height="49dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginEnd="24dp"
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText3" />
 
     <Button
         android:id="@+id/btnregister"
         android:layout_width="147dp"
         android:layout_height="48dp"
+        android:layout_marginStart="87dp"
         android:layout_marginTop="44dp"
-        android:layout_marginEnd="116dp"
+        android:layout_marginEnd="87dp"
         android:background="@color/colorAccent2"
         android:text="Create account"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/registerpwd" />
 
     <ImageView
