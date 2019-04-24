@@ -3,35 +3,70 @@ package com.team.termproject;
 import android.app.NotificationManager;
 import android.app.NotificationChannel;
 import android.os.Build;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.Build.VERSION_CODES;
+import android.view.View;
+import android.support.v4.app.NotificationManagerCompat;
+import android.widget.EditText;
+
+
+
 import java.lang.Object;
 
+import static com.team.termproject.App.CHANNEL_1_ID;
+import static com.team.termproject.App.CHANNEL_2_ID;
+
 public class Notification extends AppCompatActivity {
-    public static final String CHANNEL_1_ID = "channel1";
-    public static final String CHANNEL_2_ID= "channel2";
+
+    private NotificationManagerCompat notificationManager;
+    private EditText editTextTitle;
+    private EditText editTextMessage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notification);
-        creatNotificationChannels();
+
+        notificationManager = NotificationManagerCompat.from(this);
+
+        editTextTitle = findViewById(R.id.notificationTT);
+        editTextMessage = findViewById(R.id.notificationmsg);
     }
 
-    private void creatNotificationChannels() {
-            int importance = NotificationManager.IMPORTANCE_HIGH;
-            int importance2 = NotificationManager.IMPORTANCE_LOW;
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            NotificationChannel channel1 = new NotificationChannel(CHANNEL_1_ID, "channel 1", importance);
-            channel1.setDescription("This is Channel 1");
 
-            NotificationChannel channel2 = new NotificationChannel(CHANNEL_2_ID, "channel 2", importance2);
-            channel2.setDescription("This is Channel 2");
+    public void SendOnChannel1(View view) {
 
-            NotificationManager notificationManager = getSystemService(NotificationManager.class);
-            notificationManager.createNotificationChannel(channel1);
-            notificationManager.createNotificationChannel(channel2);
-        }
+        String title = editTextTitle.getText().toString();
+        String message = editTextTitle.getText().toString();
+
+        android.app.Notification notification = new NotificationCompat.Builder(this, CHANNEL_1_ID)
+                .setSmallIcon(R.drawable.ic_date)
+                .setContentTitle(title)
+                .setContentText(message)
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                .build();
+
+        notificationManager.notify(1, notification);
+
+    }
+
+    public void SendOnChannel2(View view) {
+
+        String title = editTextTitle.getText().toString();
+        String message = editTextTitle.getText().toString();
+
+        android.app.Notification notification = new NotificationCompat.Builder(this, CHANNEL_2_ID)
+                .setSmallIcon(R.drawable.ic_sentiment_very_satisfied_black_24dp)
+                .setContentTitle(title)
+                .setContentText(message)
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                .build();
+
+        notificationManager.notify(2, notification);
+
     }
 }
