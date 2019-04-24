@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SetNewVersion">
+    tools:context=".Notification">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar3"
@@ -24,37 +24,63 @@
                 android:layout_weight="70"
                 android:fontFamily="@font/roboto_medium"
                 android:gravity="center"
-                android:text="Version Information"
+                android:text="Notification"
                 android:textAlignment="viewStart"
                 android:textColor="@color/textColorLog"
                 android:textSize="24sp" />
         </LinearLayout>
     </android.support.v7.widget.Toolbar>
 
-    <TextView
-        android:id="@+id/versioninfo"
-        android:layout_width="0dp"
+    <EditText
+        android:id="@+id/notificationTT"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="112dp"
-        android:layout_marginEnd="73dp"
-        android:text="1.0.5/ April 23 2019 "
-        android:textSize="30sp"
+        android:layout_marginStart="98dp"
+        android:layout_marginTop="61dp"
+        android:layout_marginEnd="100dp"
+        android:ems="10"
+        android:hint="Title"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar3" />
 
-    <TextView
-        android:id="@+id/publisher"
+    <EditText
+        android:id="@+id/notificationmsg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="87dp"
-        android:layout_marginTop="23dp"
-        android:layout_marginEnd="87dp"
-        android:text="Aaron Jordan and Min Namgung"
-        android:textSize="18sp"
+        android:layout_marginStart="98dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="100dp"
+        android:ems="10"
+        android:hint="Message"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/versioninfo" />
+        app:layout_constraintTop_toBottomOf="@+id/notificationTT" />
+
+    <Button
+        android:id="@+id/btnchannel1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="161dp"
+        android:layout_marginTop="41dp"
+        android:layout_marginEnd="162dp"
+        android:text="Send on channel 1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/notificationmsg" />
+
+    <Button
+        android:id="@+id/btnchannel2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="161dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="162dp"
+        android:text="SEND ON CHANNEL2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnchannel1" />
+
 </android.support.constraint.ConstraintLayout>
