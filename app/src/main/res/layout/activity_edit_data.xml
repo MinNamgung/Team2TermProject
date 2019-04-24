@@ -15,9 +15,10 @@
         android:layout_width="456dp"
         android:layout_height="797dp"
         android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/appBarLayout"
-        app:srcCompat="@drawable/background"
-        tools:layout_editor_absoluteX="-23dp" />
+        app:srcCompat="@drawable/background" />
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appBarLayout"
