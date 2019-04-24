@@ -48,8 +48,8 @@ public class NotificationClass extends AppCompatActivity {
     public void sendOnChannel1(View v){
         Notification notification = new NotificationCompat.Builder(this, CHANNEL_1_ID)
                 .setSmallIcon(R.drawable.piggyloco)
-                .setContentTitle("Test Notification channel1")
-                .setContentText("Test message for this notification test test test")
+                .setContentTitle("Upcoming Payment")
+                .setContentText("Payment for Netflix due in 2 days!")
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
                 .build();
 
@@ -61,8 +61,8 @@ public class NotificationClass extends AppCompatActivity {
     public void sendOnChannel2(View v){
         Notification notification2 = new NotificationCompat.Builder(this, CHANNEL_2_ID)
                 .setSmallIcon(R.drawable.piggyloco)
-                .setContentTitle("Test Notification channel2")
-                .setContentText("Test message for this notification test test test")
+                .setContentTitle("Upcoming Payment")
+                .setContentText("Payment for Netflix due in 2 days!")
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
                 .build();
 
