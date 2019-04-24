@@ -11,7 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
-        app:layout_constraintTop_toTopOf="parent">
+        tools:layout_editor_absoluteX="38dp"
+        tools:layout_editor_absoluteY="4dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -60,27 +61,28 @@
         app:layout_constraintTop_toBottomOf="@+id/notificationTT" />
 
     <Button
-        android:id="@+id/btnchannel1"
+        android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="161dp"
         android:layout_marginTop="41dp"
         android:layout_marginEnd="162dp"
+        android:onClick="SendOnChannel1"
         android:text="Send on channel 1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/notificationmsg" />
 
     <Button
-        android:id="@+id/btnchannel2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="161dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="162dp"
-        android:text="SEND ON CHANNEL2"
+        android:onClick="SendOnChannel2"
+        android:text="SEND ON CHANNEL 2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnchannel1" />
+        app:layout_constraintTop_toBottomOf="@+id/button4" />
 
 </android.support.constraint.ConstraintLayout>
