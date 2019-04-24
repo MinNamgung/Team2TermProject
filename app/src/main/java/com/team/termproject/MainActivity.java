@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -15,19 +16,33 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonReg;
 
     private NotificationManagerCompat notificationManager;
-    private EditText editTextTitle;
-    private EditText editTextMessage;
+    private EditText emailEt;
+    private EditText passwordEt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        emailEt = (EditText) findViewById(R.id.loginemail);
+        passwordEt = (EditText) findViewById(R.id.loginpwd);
+
         buttonLog = (Button) findViewById(R.id.loginBtn);
         buttonLog.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                openListActivity();
+                String email = emailEt.getText().toString();
+                String pswrd = passwordEt.getText().toString();
+
+                if(email.equals("admin@email.com") && pswrd.equals("password")){
+                    openListActivity();
+                    toastMessage("Successfully logged in");
+                }
+                else{
+                    toastMessage("Incorrect credentials!");
+                }
+
+
             }
         });
 
@@ -48,6 +63,10 @@ public class MainActivity extends AppCompatActivity {
     public void openListActivity(){
         Intent intent = new Intent(MainActivity.this, ListActivity.class);
         startActivity(intent);
+    }
+
+    private void toastMessage(String message){
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
 }
