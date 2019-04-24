@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 
 import java.sql.Date;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -26,6 +27,7 @@ import java.util.Calendar;
 public class ListActivity extends AppCompatActivity {
     private static final String TAG = "ListActivity";
     private Context mContext = ListActivity.this;
+    private DecimalFormat df = new DecimalFormat("0.00");
 
     DatabaseHelper mDatabaseHelper;
 
@@ -43,17 +45,14 @@ public class ListActivity extends AppCompatActivity {
         mDatabaseHelper = new DatabaseHelper(this);
         ArrayList<Subscription> subList = returnDBList();
 
-        System.out.println("This is subList :");
-        System.out.println(subList);
-
         //Set up list
         SubscriptionListAdapter adapter = new SubscriptionListAdapter(this, R.layout.adapter_view_layout, subList);
         mListView.setAdapter(adapter);
 
         //Set Total Price and Price left
 
-        totalLbl.setText(Double.toString(setTotalPay(subList)));
-        leftLbl.setText(Double.toString(setLeftToPay(subList)));
+        totalLbl.setText(df.format(setTotalPay(subList)));
+        leftLbl.setText(df.format(setLeftToPay(subList)));
 
 
 
@@ -158,13 +157,14 @@ public class ListActivity extends AppCompatActivity {
     public ArrayList<Subscription> returnDBList(){
         Cursor data = mDatabaseHelper.getData();
         ArrayList<Subscription> listOfSubs = new ArrayList<>();
+
         while(data.moveToNext()){
             String name = data.getString(1);
             String payDay = data.getString(2);
             String amount = data.getString(3);
             String email = data.getString(4);
             String memo = data.getString(5);
-            String imgURL = "drawable://" + R.drawable.image_failed;
+            String imgURL = data.getString(6);
 
             Subscription subItem = new Subscription(name,Integer.parseInt(payDay),amount,email,memo,imgURL);
             listOfSubs.add(subItem);

@@ -69,15 +69,33 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public Cursor getItemID(String name, String day, String amount, String email, String memo, String img_url){
+
+        System.out.println("Does this even happen?2");
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "SELECT " + COL1 + " FROM " + TABLE_NAME + " WHERE (" + COL2 + " = '" + name + "' AND "
-                + COL3 + " = '" + day + "' AND "
-                + COL4 + " = '" + amount + "' AND "
-                + COL5 + " = '" + email + "' AND "
-                + COL6 + " = '" + memo + "' AND "
-                + COL7 + " = '" + img_url + "')";
+                + COL3 + " = '" + day + "')";
+
+//        + "' AND "
+//                + COL4 + " = '" + amount + "' AND "
+//                + COL5 + " = '" + email + "' AND "
+//                + COL6 + " = '" + memo + "' AND "
+//                + COL7 + " = '" + img_url
 
         Cursor data = db.rawQuery(query, null);
         return data;
+    }
+
+    public void deleteItem(int id, String name, String day, String amount, String email, String memo, String img_url){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "DELETE FROM " + TABLE_NAME + " WHERE "+ "(" + COL1 + " = '" + id + "' AND " + COL2 + " = '" + name + "' AND "
+                + COL3 + " = '" + day + "')";
+
+//        "' AND "
+//                + COL4 + " = '" + amount + "' AND "
+//                + COL5 + " = '" + email + "' AND "
+//                + COL6 + " = '" + memo + "' AND "
+//                + COL7 + " = '" + img_url +
+
+        db.execSQL(query);
     }
 }
