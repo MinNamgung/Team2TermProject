@@ -4,11 +4,11 @@ import java.util.Date;
 
 public class Subscription {
     private String name;
-    private Date payDate;
+    private int payDate;
     private String amount;
     private String imgURL;
 
-    public Subscription(String name, Date payDate, String amount, String imgURL) {
+    public Subscription(String name, int payDate, String amount, String imgURL) {
         this.name = name;
         this.payDate = payDate;
         this.amount = amount;
@@ -31,11 +31,11 @@ public class Subscription {
         this.name = name;
     }
 
-    public Date getPayDate() {
+    public int getPayDate() {
         return payDate;
     }
 
-    public void setPayDate(Date payDate) {
+    public void setPayDate(int payDate) {
         this.payDate = payDate;
     }
 

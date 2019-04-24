@@ -64,7 +64,7 @@ public class SubscriptionListAdapter extends ArrayAdapter<Subscription> {
 
         //get the subscription information
         String name = getItem(position).getName();
-        Date payDate = getItem(position).getPayDate();
+        int payDate = getItem(position).getPayDate();
         String amount = getItem(position).getAmount();
         String imgUrl = getItem(position).getImgURL();
 
@@ -110,7 +110,7 @@ public class SubscriptionListAdapter extends ArrayAdapter<Subscription> {
         imageLoader.displayImage(imgUrl, holder.icon, options);
 
         holder.name.setText(name);
-        holder.payDate.setText(payDate.toString());
+        holder.payDate.setText(Integer.toString(payDate));
         holder.amount.setText(amount);
 
 

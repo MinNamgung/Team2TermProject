@@ -2,17 +2,20 @@ package com.team.termproject;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
+import android.widget.TextView;
+
 
 import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Calendar;
+
+
 
 public class ListActivity extends AppCompatActivity {
     private static final String TAG = "ListActivity";
@@ -27,10 +30,18 @@ public class ListActivity extends AppCompatActivity {
         setupToolbar();
 
         ListView mListView = (ListView) findViewById(R.id.listView);
+        TextView totalLbl = (TextView) findViewById(R.id.btmBarAmountTotal);
+        TextView leftLbl = (TextView) findViewById(R.id.btmBarAmountLeft);
 
-
+        //Set up list
         SubscriptionListAdapter adapter = new SubscriptionListAdapter(this, R.layout.adapter_view_layout, returnList());
         mListView.setAdapter(adapter);
+
+        //Set Total Price and Price left
+
+        totalLbl.setText(Double.toString(setTotalPay(returnList())));
+        leftLbl.setText(Double.toString(setLeftToPay(returnList())));
+
     }
 
     //set up toolbar menu button
@@ -68,20 +79,16 @@ public class ListActivity extends AppCompatActivity {
     public ArrayList<Subscription> returnList(){
         // List items
 
-        Date netflixDate = new Date(119, 4, 9);
-        Subscription netflix = new Subscription("Netflix", netflixDate, "$9.99", "drawable://" + R.drawable.netflix_icon);
 
-        Date spotifyDate = new Date(119, 4, 13);
-        Subscription spotify = new Subscription("Spotify", netflixDate, "$4.99", "drawable://" + R.drawable.spotify_icon);
+        Subscription netflix = new Subscription("Netflix", 7, "$9.99", "drawable://" + R.drawable.netflix_icon);
 
-        Date cheggDate = new Date(119, 4, 12);
-        Subscription chegg = new Subscription("Chegg", cheggDate, "$14.99", "drawable://" + R.drawable.chegg_icon);
+        Subscription spotify = new Subscription("Spotify", 29, "$4.99", "drawable://" + R.drawable.spotify_icon);
 
-        Date huluDate = new Date(119, 4, 17);
-        Subscription hulu = new Subscription("Hulu", huluDate, "$12.99", "drawable://" + R.drawable.hulu_icon);
+        Subscription chegg = new Subscription("Chegg", 27, "$14.99", "drawable://" + R.drawable.chegg_icon);
 
-        Date humbleBundleDate = new Date(119, 4, 11);
-        Subscription humbleBundle = new Subscription("Humble Bundle", humbleBundleDate, "$12.00", "drawable://" + R.drawable.image_failed);
+        Subscription hulu = new Subscription("Hulu", 3, "$12.99", "drawable://" + R.drawable.hulu_icon);
+
+        Subscription humbleBundle = new Subscription("Humble Bundle", 5, "$12.00", "drawable://" + R.drawable.money_stack_ico);
 
         //Add the subscription objects to the list
         ArrayList<Subscription> subList = new ArrayList<>();
@@ -105,6 +112,39 @@ public class ListActivity extends AppCompatActivity {
     public void returnToLogInActivity(){
         Intent intent = new Intent(ListActivity.this, MainActivity.class);
         startActivity(intent);
+    }
+
+    public double setTotalPay(ArrayList<Subscription> list){
+        double total = 0;
+
+
+        for(int i = 0; i < list.size(); i++){
+            String temp = list.get(i).getAmount().replaceAll("[$]", "");
+            total += Double.parseDouble(temp);
+        }
+
+        return total;
+    }
+    public double setLeftToPay(ArrayList<Subscription> list){
+        double left = 0;
+        Calendar calendar = Calendar.getInstance();
+        int currentDay = calendar.get(Calendar.DAY_OF_MONTH);
+
+        System.out.println(currentDay);
+        System.out.println();
+        for(int i = 0; i < list.size(); i++){
+            int temp = list.get(i).getPayDate();
+
+            System.out.println();
+            System.out.println(temp);
+            System.out.println();
+            if(temp > currentDay){
+                String amountTemp = list.get(i).getAmount().replaceAll("[$]", "");
+
+                left += Double.parseDouble(amountTemp);
+            }
+        }
+        return left;
     }
 
 }
