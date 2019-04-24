@@ -40,7 +40,7 @@
                     android:layout_height="match_parent"
                     android:fontFamily="@font/roboto_medium"
                     android:gravity="center"
-                    android:text="Template Activity"
+                    android:text="Subscriptions"
                     android:textColor="@color/textColorLog"
                     android:textSize="24sp" />
 
@@ -72,7 +72,7 @@
             <TextView
                 android:layout_width="0px"
                 android:layout_height="60dp"
-                android:layout_weight="14"
+                android:layout_weight="15"
                 android:fontFamily="@font/roboto_medium"
                 android:gravity="center|left"
                 android:text=" Left: $"
