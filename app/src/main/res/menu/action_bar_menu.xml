@@ -2,17 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:title="Add Monthly Payment"
-        android:id="@+id/menuAdd"
-        android:icon="@drawable/ic_add_black_24dp">
+        android:id="@+id/menuAdd">
     </item>
     <item
         android:title="Log Out"
-        android:id="@+id/menuLog"
-        android:icon="@drawable/logout_icon">
+        android:id="@+id/menuLog">
     </item>
     <item
         android:title="Settings"
-        android:id="@+id/menuSettings"
-        android:icon="@drawable/ic_settings_black_24dp">
+        android:id="@+id/menuSettings">
     </item>
 </menu>
