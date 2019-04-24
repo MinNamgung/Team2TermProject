@@ -41,7 +41,7 @@ public class Settings extends AppCompatActivity {
                     startActivity(intent);
                 }
                 else if(position == 1) {
-                    Intent intent2 = new Intent(Settings.this, Notification.class);
+                    Intent intent2 = new Intent(Settings.this, NotificationClass.class);
                     startActivity(intent2);
                 }
                 else if(position == 2) {

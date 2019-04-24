@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Notification">
+    tools:context=".NotificationClass">
 
     <ImageView
         android:id="@+id/imageView7"
@@ -42,57 +42,41 @@
         </LinearLayout>
     </android.support.v7.widget.Toolbar>
 
-    <EditText
-        android:id="@+id/notificationTT"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="98dp"
-        android:layout_marginTop="61dp"
-        android:layout_marginEnd="100dp"
-        android:ems="10"
-        android:hint="Title"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar3" />
-
-    <EditText
-        android:id="@+id/notificationmsg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="98dp"
-        android:layout_marginTop="34dp"
-        android:layout_marginEnd="100dp"
-        android:ems="10"
-        android:hint="Message"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/notificationTT" />
-
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/notifBtn2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="161dp"
-        android:layout_marginTop="41dp"
         android:layout_marginEnd="162dp"
-        android:onClick="SendOnChannel1"
-        android:text="Send on channel 1"
+        android:layout_marginBottom="228dp"
+        android:background="@color/colorPrimary"
+        android:fontFamily="@font/roboto_medium"
+        android:text=" SEND NOTIFICATION C2 "
+        android:textColor="@color/textColorLog"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/notificationmsg" />
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
+        android:id="@+id/notifBtn1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="161dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="162dp"
-        android:onClick="SendOnChannel2"
-        android:text="SEND ON CHANNEL 2"
+        android:layout_marginBottom="8dp"
+        android:background="@color/colorPrimary"
+        android:fontFamily="@font/roboto_medium"
+        android:text=" SEND NOTIFICATION  C1 "
+        android:textColor="@color/textColorLog"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/notifBtn2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar3"
+        app:layout_constraintVertical_bias="0.919" />
 
 </android.support.constraint.ConstraintLayout>

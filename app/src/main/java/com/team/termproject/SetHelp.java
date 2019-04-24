@@ -33,7 +33,7 @@ public class SetHelp extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if(position == 0) {
-                    Intent intent = new Intent(SetHelp.this, Notification.class);
+                    Intent intent = new Intent(SetHelp.this, NotificationClass.class);
                     startActivity(intent);
                 }
                 else if(position == 1) {

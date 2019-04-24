@@ -1,16 +1,19 @@
 package com.team.termproject;
 
+import android.app.Application;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-public class App extends AppCompatActivity {
+public class App extends Application {
 
-    public static final String CHANNEL_1_ID = "Channel 1";
-    public static final String CHANNEL_2_ID = "Channel 2";
+    public static final String CHANNEL_1_ID = "channel1";
+    public static final String CHANNEL_2_ID = "channel2";
 
     public void onCreate() {
+        super.onCreate();
+
         creatNotificationChannels();
     }
 
@@ -24,9 +27,9 @@ public class App extends AppCompatActivity {
             NotificationChannel channel2 = new NotificationChannel(CHANNEL_2_ID, "channel 2", importance2);
             channel2.setDescription("This is Channel 2");
 
-            NotificationManager notificationManager = getSystemService(NotificationManager.class);
-            notificationManager.createNotificationChannel(channel1);
-            notificationManager.createNotificationChannel(channel2);
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(channel1);
+            manager.createNotificationChannel(channel2);
         }
 
 
