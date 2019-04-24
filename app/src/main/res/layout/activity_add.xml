@@ -55,50 +55,49 @@
         android:layout_marginEnd="15dp"
         android:text="Name"
         android:textSize="25sp"
-        app:layout_constraintEnd_toStartOf="@+id/editText"
+        app:layout_constraintEnd_toStartOf="@+id/nameTextAdd"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/nameTextAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="11dp"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="108dp"
         android:layout_marginEnd="53dp"
         android:layout_marginBottom="35dp"
         android:ems="10"
         android:inputType="text"
-        app:layout_constraintBottom_toTopOf="@+id/addDate"
+        app:layout_constraintBottom_toTopOf="@+id/addDayOfPay"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/addName"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="spread_inside" />
 
     <EditText
-        android:id="@+id/addDate"
-        android:layout_width="212dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="11dp"
-        android:layout_marginTop="32dp"
+        android:id="@+id/addDayOfPay"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="53dp"
         android:ems="10"
-        android:hint="Select the Date"
-        android:inputType="date"
+        android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/nameTextAdd" />
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="69dp"
-        android:layout_height="43dp"
+        android:layout_width="179dp"
+        android:layout_height="48dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="36dp"
         android:layout_marginEnd="15dp"
-        android:text="Date"
+        android:text="Day of Payment"
         android:textSize="25sp"
-        app:layout_constraintEnd_toStartOf="@+id/addDate"
+        app:layout_constraintEnd_toStartOf="@+id/addDayOfPay"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addName" />
@@ -115,7 +114,7 @@
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addDate" />
+        app:layout_constraintTop_toBottomOf="@+id/addDayOfPay" />
 
     <EditText
         android:id="@+id/addEmail"
@@ -156,9 +155,10 @@
         android:layout_marginStart="155dp"
         android:layout_marginEnd="155dp"
         android:layout_marginBottom="68dp"
-        android:background="@color/design_default_color_primary_dark"
-        android:text="Save"
-        android:textColor="@color/backColorLog"
+        android:background="@color/colorPrimary"
+        android:fontFamily="@font/roboto_medium"
+        android:text="ADD"
+        android:textColor="@color/textColorLog"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -3,6 +3,7 @@ package com.team.termproject;
 import android.content.Context;
 import android.content.Intent;
 import android.support.design.widget.BottomNavigationView;
+import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -11,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import java.sql.Date;
@@ -21,8 +23,9 @@ import java.util.Calendar;
 
 public class ListActivity extends AppCompatActivity {
     private static final String TAG = "ListActivity";
-
     private Context mContext = ListActivity.this;
+
+    DatabaseHelper mDatabaseHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,17 +38,28 @@ public class ListActivity extends AppCompatActivity {
         TextView totalLbl = (TextView) findViewById(R.id.btmBarAmountTotal);
         TextView leftLbl = (TextView) findViewById(R.id.btmBarAmountLeft);
 
+        mDatabaseHelper = new DatabaseHelper(this);
+        ArrayList<Subscription> subList = returnDBList();
+
+        System.out.println("This is subList :");
+        System.out.println(subList);
+
         //Set up list
-        SubscriptionListAdapter adapter = new SubscriptionListAdapter(this, R.layout.adapter_view_layout, returnList());
+        SubscriptionListAdapter adapter = new SubscriptionListAdapter(this, R.layout.adapter_view_layout, subList);
         mListView.setAdapter(adapter);
 
         //Set Total Price and Price left
 
-        totalLbl.setText(Double.toString(setTotalPay(returnList())));
-        leftLbl.setText(Double.toString(setLeftToPay(returnList())));
+        totalLbl.setText(Double.toString(setTotalPay(subList)));
+        leftLbl.setText(Double.toString(setLeftToPay(subList)));
 
     }
 
+
+
+    /**
+     *
+     */
     //set up toolbar menu button
     private void setupToolbar(){
         Toolbar toolbar = (Toolbar) findViewById(R.id.listViewToolbar);
@@ -79,18 +93,18 @@ public class ListActivity extends AppCompatActivity {
     }
 
 
+    /**
+     *
+     * @return
+     */
     public ArrayList<Subscription> returnList(){
         // List items
 
 
         Subscription netflix = new Subscription("Netflix", 7, "$9.99", "drawable://" + R.drawable.netflix_icon);
-
         Subscription spotify = new Subscription("Spotify", 29, "$4.99", "drawable://" + R.drawable.spotify_icon);
-
         Subscription chegg = new Subscription("Chegg", 27, "$14.99", "drawable://" + R.drawable.chegg_icon);
-
         Subscription hulu = new Subscription("Hulu", 3, "$12.99", "drawable://" + R.drawable.hulu_icon);
-
         Subscription humbleBundle = new Subscription("Humble Bundle", 5, "$12.00", "drawable://" + R.drawable.money_stack_ico);
 
         //Add the subscription objects to the list
@@ -106,12 +120,38 @@ public class ListActivity extends AppCompatActivity {
         return subList;
     }
 
+    /**
+     * new list content from db
+     */
+    public ArrayList<Subscription> returnDBList(){
+        Cursor data = mDatabaseHelper.getData();
+        ArrayList<Subscription> listOfSubs = new ArrayList<>();
+        while(data.moveToNext()){
+            String name = data.getString(1);
+            String payDay = data.getString(2);
+            String amount = data.getString(3);
+            String email = data.getString(4);
+            String memo = data.getString(5);
+            String imgURL = "drawable://" + R.drawable.image_failed;
 
+            Subscription subItem = new Subscription(name,Integer.parseInt(payDay),amount,imgURL);
+            listOfSubs.add(subItem);
+        }
+
+        return listOfSubs;
+    }
+
+    /**
+     *
+     */
     public void openAddActivity(){
         Intent intent = new Intent(ListActivity.this, AddActivity.class);
         startActivity(intent);
     }
 
+    /**
+     *
+     */
     public void returnToLogInActivity(){
         Intent intent = new Intent(ListActivity.this, MainActivity.class);
         startActivity(intent);
@@ -122,6 +162,11 @@ public class ListActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /**
+     *
+     * @param list
+     * @return
+     */
     public double setTotalPay(ArrayList<Subscription> list){
         double total = 0;
 
@@ -133,19 +178,21 @@ public class ListActivity extends AppCompatActivity {
 
         return total;
     }
+
+    /**
+     *
+     * @param list
+     * @return
+     */
     public double setLeftToPay(ArrayList<Subscription> list){
         double left = 0;
         Calendar calendar = Calendar.getInstance();
         int currentDay = calendar.get(Calendar.DAY_OF_MONTH);
 
-        System.out.println(currentDay);
-        System.out.println();
         for(int i = 0; i < list.size(); i++){
             int temp = list.get(i).getPayDate();
 
-            System.out.println();
-            System.out.println(temp);
-            System.out.println();
+
             if(temp > currentDay){
                 String amountTemp = list.get(i).getAmount().replaceAll("[$]", "");
 
@@ -153,6 +200,10 @@ public class ListActivity extends AppCompatActivity {
             }
         }
         return left;
+    }
+
+    private void toastMessage(String message){
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
 }
